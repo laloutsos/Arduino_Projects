@@ -4,11 +4,11 @@
 Climate Watch is a smart system that monitors temperature and humidity using an **Arduino**, **DHT11 sensor**, **DS3231 RTC module**, **LCD display**, and **IR remote control**. It allows users to view real-time data and control the display with an IR remote.
 
 ##  Features
-- 📊 **Real-time temperature & humidity monitoring**
-- 🕒 **Date & time display** with RTC module
-- 📺 **16x2 LCD display** for easy data visualization
-- 🎮 **IR remote control support** to navigate the menu
-- 🚨 **Overheat warning system** with LED indicators
+-  **Real-time temperature & humidity monitoring**
+-  **Date & time display** with RTC module
+-  **16x2 LCD display** for easy data visualization
+-  **IR remote control support** to navigate the menu
+-  **Overheat warning system** with LED indicators
 
 ## ️ Components Required
 - **Arduino Uno**
