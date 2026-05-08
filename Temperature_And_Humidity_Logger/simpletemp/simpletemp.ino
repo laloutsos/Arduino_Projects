@@ -4,25 +4,32 @@
 #define DHT_SENSOR_PIN 4
 
 DHT_nonblocking dht_sensor(DHT_SENSOR_PIN, DHT_SENSOR_TYPE);
+
 float temperature;
 float humidity;
+
+unsigned long lastMeasurement = 0;
 
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  static unsigned long lastMeasurement = 0;
 
-  if (millis() - lastMeasurement > 500000) { 
+  if (millis() - lastMeasurement > 2000) {
+
     if (dht_sensor.measure(&temperature, &humidity)) {
-      unsigned long time_sec = millis() / 1000;  
 
-
+      Serial.print("Temp: ");
       Serial.print(temperature);
-      Serial.print(",");
-      Serial.println(humidity);
+      Serial.print(" C | Hum: ");
+      Serial.print(humidity);
+      Serial.println(" %");
+
+    } else {
+      Serial.println("Sensor failed reading!");
     }
+
     lastMeasurement = millis();
   }
 }
